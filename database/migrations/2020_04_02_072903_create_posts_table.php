@@ -13,6 +13,11 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('tag');
+        });
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
