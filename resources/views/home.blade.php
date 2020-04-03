@@ -19,7 +19,13 @@
                     @endif
                     Welcome {{ Auth::user()->name }}, 
                     you are logged in!
-                    
+                    <ul>
+                        <li>
+                            <a href="/posts/add">Add a new Post</a>
+                        </li>                        <li>
+                            <a href="/posts/">View the Forum</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

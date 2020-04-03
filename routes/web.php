@@ -21,7 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 //Posts
 Route::get('/posts', 'PostController@index');
 
