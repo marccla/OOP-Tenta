@@ -20,3 +20,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Posts
+Route::get('/posts', 'PostController@index');
+
+Route::get('/posts/add', 'PostController@create');
+Route::post('/posts/add', 'PostController@create');
+Route::post('/posts/add', 'PostController@store');
+
+Route::post('/posts', 'PostController@store');  
+
+Route::get('/posts/{id}/', 'PostController@show');
+Route::delete('/posts/{id}/', 'PostController@destroy');
+
+Route::get('/posts/edit/{id}', 'PostController@edit');
+Route::post('/posts/edit/{id}', 'PostController@edit');
+Route::put('/posts/edit/{id}', 'PostController@edit');
+Route::put('/posts/edit/{id}', 'PostController@update');
