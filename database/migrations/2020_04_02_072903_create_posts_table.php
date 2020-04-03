@@ -13,7 +13,10 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('category');
+        });
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
             $table->string('tag');
@@ -22,16 +25,14 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('content');
-            $table->string('author');
             $table->string('post_img');     
-            $table->integer('upvotes');
-            $table->integer('downvotes');
+            $table->integer('upvotes')->default(0);
+            $table->integer('downvotes')->default(0);
             $table->timestamps();
+            $table->string('author');
             $table->foreignId('tag_id')->references('id')->on('tags');
+            $table->foreignId('cat_id')->references('id')->on('categories');
         });
-        // Schema::table('posts', function($table) {
-        //     $table->foreignId('tag_id')->references('id')->on('tags');
-        // });
     }
 
     /**
