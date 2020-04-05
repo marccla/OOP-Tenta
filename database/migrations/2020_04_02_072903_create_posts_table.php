@@ -13,25 +13,36 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('category');
-        });
-        Schema::create('tags', function (Blueprint $table) {
-            $table->id();
-            $table->string('tag');
-        });
+        // Schema::create('cats', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('cat_title');
+        // });
+        // Schema::create('tags', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('tag_title');
+        // });
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('cat_id');
             $table->string('title');
             $table->longText('content');
             $table->string('post_img');     
             $table->integer('upvotes')->default(0);
             $table->integer('downvotes')->default(0);
             $table->timestamps();
-            $table->string('author');
-            $table->foreignId('tag_id')->references('id')->on('tags');
-            $table->foreignId('cat_id')->references('id')->on('categories');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('cat_id')
+                ->references('id')
+                ->on('cats')
+                ->onDelete('cascade');
+            // $table->foreignId('tag_id')->references('id')->on('tags')->default(0);
+            // $table->unsignedBigInteger('cat_id')->references('id')->on('cats')->default(0);
         });
     }
 
@@ -42,7 +53,7 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('cats');
         Schema::dropIfExists('tags');
         Schema::dropIfExists('posts');
     }

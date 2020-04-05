@@ -11,13 +11,21 @@
      
       <form action="/posts/add/" method="POST">
         @csrf
+        <select class="custom-select" name="cat_id">
+          <option selected>Open this select menu</option>
+          @foreach ($posts->cat as $post)
+           <option value="{{ $post->cat_id }}">{{ $post->cat_id }}</option>
+          @endforeach
+          
+
+        </select>
           <div class="form-group">
-            <label for="Title">Title</label>
+            <label for="title">Title</label>
             <input type="text" name="title" class="form-control" id="title-input" placeholder="Enter Title" required>
           </div>
           <div class="form-group">
-            <label for="Title">Image</label>
-            <input type="text" name="img_url" class="form-control" id="title-input"  placeholder="img/<img name>.<filetype>" required>
+            <label for="image">Image</label>
+            <input type="text" name="post_img" class="form-control" id="post_img"  placeholder="img/<img name>.<filetype>" required>
           </div>
           <div class="form-group">
             <label for="content">Content</label>

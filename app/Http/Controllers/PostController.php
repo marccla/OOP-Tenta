@@ -41,7 +41,7 @@ class PostController extends Controller
 
        $post->title = request('title');
        $post->content = request('content');
-       $post->img_url = request('img_url');
+       $post->post_img = request('post_img');
        $post->author = request('author');
 
        $post->save();
@@ -63,7 +63,7 @@ class PostController extends Controller
     
     $post->title = request('title');
     $post->content = request('content');
-    $post->img_url = request('img_url');
+    $post->post_img = request('post_img');
     $post->author = request('author');
     
     $post->save();

@@ -37,3 +37,9 @@ Route::get('/posts/edit/{id}', 'PostController@edit');
 Route::post('/posts/edit/{id}', 'PostController@edit');
 Route::put('/posts/edit/{id}', 'PostController@edit');
 Route::put('/posts/edit/{id}', 'PostController@update');
+
+//Categories
+// Route::get('/posts/add', 'CatController@create');
+// Route::post('/posts/add', 'CatController@create');
+// Route::post('/posts/add', 'CatController@store');
+

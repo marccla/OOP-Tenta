@@ -10,8 +10,15 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
-    public function tags()
+
+    public function author()
     {
-        return $this->hasOne('App\Tag');
+        return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function cat()
+    {
+        return $this->belongsTo(Cat::class, 'cat_id');
+    }
+
 }
