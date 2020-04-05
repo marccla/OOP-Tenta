@@ -11,14 +11,14 @@
      
       <form action="/posts/add/" method="POST">
         @csrf
-        <select class="custom-select" name="cat_id">
-          <option selected>Open this select menu</option>
-          @foreach ($posts->cat as $post)
-           <option value="{{ $post->cat_id }}">{{ $post->cat_id }}</option>
-          @endforeach
-          
-
+        <div class="form-group">
+        <select name="cat_id" class="custom-select">
+          <option  selected>Open this select menu</option>
+          @foreach ($cats as $cat)
+           <option value="{{ $cat->id }}">{{ $cat->cat_item }}</option>
+          @endforeach        
         </select>
+        </div>
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" class="form-control" id="title-input" placeholder="Enter Title" required>
@@ -30,7 +30,7 @@
           <div class="form-group">
             <label for="content">Content</label>
             <textarea type="text" rows="10" class="form-control" id="content-input" name="content" placeholder="Content" required></textarea>
-            <input class="d-none" name="author" type="text" value="{{ Auth::user()->name }}">
+            <input class="" name="user_id" type="number" value="{{ Auth::user()->id }}">
           </div>
           <button type="submit" value="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -39,7 +39,7 @@
       <h2 class="text-center mb-3">Posts</h2>
 
       @foreach($posts as $post)
-      @if (Auth::user()->name === $post->author)
+      @if (Auth::user()->id === $post->user_id)
         <div>
           <h1>{{ $post->title }}</h1>
         <form action="/posts/{{ $post->id }}" method="POST">
