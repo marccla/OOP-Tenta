@@ -5,14 +5,17 @@
     <div class="row">
 @foreach($posts as $post)
 
-        <div class="div col-12 col-md-4 col-lg-3">
+        <div class="div col-12 col-md-4 col-lg-3 card">
            <img src="{{ $post->img_url }}" style="max-width:150px">
              <a href="posts/{{ $post->id }}">
-                 <h1>{{ $post->title }}</h1>
+                 <h2>{{ $post->title }}</h2>
             </a>
-            <p>{{ $post->content }}</p>
-            <p>{{ $post->author }}</p>
-            
+            <div class="card-body">
+                <p>{{ $post->content }}</p>
+            </div>
+            <div class="card-footer">
+                 <p>{{ $post->author->name }}</p>
+             </div>
         </div>
         
 @endforeach
