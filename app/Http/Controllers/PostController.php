@@ -79,7 +79,7 @@ class PostController extends Controller
     $post->title = request('title');
     $post->content = request('content');
     $post->post_img = request('post_img');
-    $post->author = request('author');
+    $post->user_id = request('user_id');
     
     $post->save();
 

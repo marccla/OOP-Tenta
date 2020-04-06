@@ -7,7 +7,7 @@
 
         <div class="div col-12 col-md-4 col-lg-3 card">
            <img src="{{ $post->img_url }}" style="max-width:150px">
-             <a href="posts/{{ $post->id }}">
+             <a href="/posts/{{ $post->id }}">
                  <h2>{{ $post->title }}</h2>
             </a>
             <div class="card-body">
