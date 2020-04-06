@@ -1,7 +1,9 @@
+$aColor: rgb(199, 199, 235);
+
 .navbar {
     background: black !important;
     a {
-        color: blue !important;
+        color: $aColor !important;
     }
 }
 

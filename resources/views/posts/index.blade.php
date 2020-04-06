@@ -5,11 +5,14 @@
     <div class="row">
 @foreach($posts as $post)
 
-        <div class="div col-11 col-md-4 col-lg-3 card m-sm-auto">
+        <div class="div col-11 col-md-4 col-lg-3 card m-sm-auto ">
+            <span><small class="thread-text">
+                THREAD // {{ $post->cat->cat_item }}
+            </small></span>
             <a href="/posts/{{ $post->id }}">
-           <img src="{{ $post->img_url }}" style="max-width:150px">
+            <img src="{{ $post->img_url }}" style="max-width:150px">
              
-                 <h2>{{ $post->title }}</h2>
+            <h2>{{ $post->title }}</h2>
             
             <div class="card-body">
                 <p>{{ Str::limit($post->content, $limit = 20, $end = '(...)') }}</p> 

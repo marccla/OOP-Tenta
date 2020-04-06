@@ -1,0 +1,15 @@
+.thread-text {
+    color: rgb(236, 142, 142);
+}
+
+.card {
+
+    h2 {
+        font-size: 16px;
+    }
+}
+
+.card:hover {
+    border: 3px solid black;
+    box-shadow: 5px 5px 5px black;
+}
