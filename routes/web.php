@@ -39,7 +39,8 @@ Route::put('/posts/edit/{id}', 'PostController@edit');
 Route::put('/posts/edit/{id}', 'PostController@update');
 
 // Comments
-// Route::get('/posts/{id}/', 'CommentController@index');
+Route::post('/posts/{id}/', 'CommentController@store');
+
 
 
 

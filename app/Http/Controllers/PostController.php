@@ -60,6 +60,7 @@ class PostController extends Controller
        $post->cat_id = request('cat_id');
 
        $post->save();
+       
 
        
        return redirect('/posts/add');
