@@ -42,6 +42,11 @@ Route::put('/posts/edit/{id}', 'PostController@update');
 Route::post('/posts/{id}/', 'CommentController@store');
 
 
+// Save them Cats
+Route::post('/posts/add/cat', 'CatController@store');
+
+
+
 
 
 

@@ -41,6 +41,13 @@ class CatController extends Controller
     public function store(Request $request)
     {
         //
+        $cat = new Cat();
+
+        $cat->cat_item = request('cat_item');
+
+        $cat->save();
+
+        return back();
     }
 
     /**

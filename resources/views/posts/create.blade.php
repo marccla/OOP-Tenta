@@ -35,6 +35,21 @@
           <button type="submit" value="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
+    <div class="col-12 col-md-6 col-lg-6 p-5">
+      <h2>Create a new Category</h2>
+      <span><small>if no category suits you, please add a new one.</small></span>
+    <form action="/posts/add/cat" method="POST">
+      @csrf
+      <div class="form-group">
+        <input type="text" name="cat_item" class="form-control"  placeholder="Name of your own category" required>
+      </div>
+      <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+      </form>
+      </div>
+
+    </div>
+
     <div class="col-12 col-md-6 col-lg-6 p-5">
       <h2 class="text-center mb-3">Posts</h2>
 
