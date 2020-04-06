@@ -18,12 +18,12 @@
           </div>
           <div class="form-group">
             <label for="Title">Image</label>
-            <input type="text" name="post_img" class="form-control" value="{{ $post->img_url }}">
+            <input type="text" name="post_img" class="form-control" value="{{ $post->post_img }}">
           </div>
           <div class="form-group">
             <label for="content">Content</label>
-            <input type="text" name="content" rows="10" class="form-control" value="{{ $post->content }}">
-            <input name="user_id" type="number" value="{{ Auth::user()->id }}">
+            <textarea rows="10"  type="text" name="content" class="form-control" placeholder="">{{ $post->content }}</textarea>
+            <input name="user_id" type="hidden" value="{{ Auth::user()->id }}">
           </div>
         <input type="submit" class="btn" value="submit"/>
         </form>

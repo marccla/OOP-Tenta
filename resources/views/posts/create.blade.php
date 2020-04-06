@@ -12,10 +12,10 @@
       <form action="/posts/add/" method="POST">
         @csrf
         <div class="form-group">
-        <select name="cat_id" class="custom-select">
-          <option  selected>Open this select menu</option>
+        <select name="cat_id" class="custom-select" required>
+          <h2>Choose a category<h2>
           @foreach ($cats as $cat)
-           <option value="{{ $cat->id }}">{{ $cat->cat_item }}</option>
+           <option value="{{ $cat->id }}">{{ $cat->cat_item }}</option >
           @endforeach        
         </select>
         </div>
@@ -29,8 +29,8 @@
           </div>
           <div class="form-group">
             <label for="content">Content</label>
-            <textarea type="text" rows="10" class="form-control" id="content-input" name="content" placeholder="Content" required></textarea>
-            <input class="" name="user_id" type="number" value="{{ Auth::user()->id }}">
+            <textarea type="text" rows="10" class="form-control" name="content" placeholder="Content" required></textarea>
+            <input class="" name="user_id" type="hidden" value="{{ Auth::user()->id }}">
           </div>
           <button type="submit" value="submit" class="btn btn-primary">Submit</button>
         </form>
