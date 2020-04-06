@@ -18,17 +18,19 @@ class PostController extends Controller
        
         
         $posts = Post::all();
+        $posts = Post::orderBy('updated_at', 'desc')->get();
         return view('posts.index', [
             'posts' => $posts,
-           
-            
         ]);
+
+    
 
    }
 
    public function show($id) {
 
     $comments = Comment::all();
+    
     $post = Post::findOrFail($id);
     
     return view('posts.show', [

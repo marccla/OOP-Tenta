@@ -32,15 +32,15 @@
                             </form>
         </div>
         @else 
-        <div class="col-12 col-lg-6 m-auto">
+        <div class="col-12 col-md-6 col-lg-6 m-auto">
             <span> <a href="/login"> Login</a> to make a comment</span>
         </div>
         @endif
-        <div class="col-12 mt-5">
+        <div class="col-12 col-md-6 col-lg-6 m-auto">
          
              <h3>Comments</h3>
         
-            @foreach ($comments as $comment)
+            @foreach ($comments->reverse() as $comment)
             @if ($comment->post_id === $post->id)
             
             <p>{{ $comment->content }}</p>  

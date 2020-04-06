@@ -23,7 +23,7 @@
                         <li>
                             <a href="/posts/add">Add a new Post</a>
                         </li>                        <li>
-                            <a href="/posts/">View the Forum</a>
+                            <a href="/posts/">View the latest posts</a>
                         </li>
                     </ul>
                 </div>
