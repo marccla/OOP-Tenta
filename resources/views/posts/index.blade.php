@@ -11,7 +11,7 @@
                  <h2>{{ $post->title }}</h2>
             </a>
             <div class="card-body">
-                <p>{{ $post->content }}</p>
+                <p>{{ Str::limit($post->content, $limit = 20, $end = '...') }}</p> 
             </div>
             <div class="card-footer">
                  <p>{{ $post->author->name }}</p>

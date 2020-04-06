@@ -10,6 +10,7 @@ use App\Cat;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -19,6 +20,7 @@ class PostController extends Controller
         $posts = Post::all();
         return view('posts.index', [
             'posts' => $posts,
+           
             
         ]);
 
