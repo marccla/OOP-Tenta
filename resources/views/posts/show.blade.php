@@ -12,6 +12,16 @@
 <p>Skrivet av: {{ $post->author->name }}</p>
 <a href="{{ URL::previous() }}">Back</a>
 
+<h3>Comments</h3>
+@foreach ($comments as $comment)
+
+@if ($comment->post_id === $post->id)
+<p>{{ $comment->content }}</p>  
+<p>{{ $comment->author->name}}</p>  
+
+@endif
+    
+@endforeach
 
 
 @endsection

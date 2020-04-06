@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Posts
+// Posts
 Route::get('/posts', 'PostController@index');
 
 Route::get('/posts/add', 'PostController@create');
@@ -38,8 +38,9 @@ Route::post('/posts/edit/{id}', 'PostController@edit');
 Route::put('/posts/edit/{id}', 'PostController@edit');
 Route::put('/posts/edit/{id}', 'PostController@update');
 
-//Categories
-// Route::get('/posts/add', 'CatController@index');
-// Route::post('/posts/add', 'CatController@create');
-// Route::post('/posts/add', 'CatController@store');
+// Comments
+// Route::get('/posts/{id}/', 'CommentController@index');
+
+
+
 

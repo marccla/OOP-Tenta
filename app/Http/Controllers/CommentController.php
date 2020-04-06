@@ -25,6 +25,10 @@ class CommentController extends Controller
     public function create()
     {
         //
+        // $posts = Comment::all();
+        // return view('posts.show', [
+        //     'comments' => $comments,
+        // ]);
     }
 
     /**
