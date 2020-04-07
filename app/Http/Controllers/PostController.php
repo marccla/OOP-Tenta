@@ -18,7 +18,7 @@ class PostController extends Controller
        
         
         $posts = Post::all();
-        $posts = Post::orderBy('updated_at', 'desc')->get();
+        $posts = Post::orderBy('updated_at', 'desc')->paginate(15);
         return view('posts.index', [
             'posts' => $posts,
         ]);
