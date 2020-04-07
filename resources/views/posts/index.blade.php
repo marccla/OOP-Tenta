@@ -9,7 +9,7 @@
             <span><small class="thread-text">
                 THREAD // {{ $post->cat->cat_item }}
             </small></span>
-            <a href="/posts/{{ $post->id }}">
+            <a href="/posts/{{ $post->slug }}">
             <img src="{{ $post->img_url }}" style="max-width:150px">
              
             <h2>{{ $post->title }}</h2>

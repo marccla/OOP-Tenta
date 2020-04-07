@@ -39,7 +39,7 @@ Route::put('/posts/edit/{id}', 'PostController@edit');
 Route::put('/posts/edit/{id}', 'PostController@update');
 
 // Comments
-Route::post('/posts/{id}/', 'CommentController@store');
+Route::post('/posts/{slug}/', 'CommentController@store');
 
 
 // Save them Cats

@@ -27,12 +27,13 @@ class PostController extends Controller
 
    }
 
-   public function show($id) {
+   public function show($slug) {
 
     $comments = Comment::all();
     
-    $post = Post::findOrFail($id);
-    
+    // $post = Post::findOrFail($id);
+    $post = Post::where('slug', $slug)->firstOrFail();
+
     return view('posts.show', [
         'post' => $post,
         'comments' => $comments,
@@ -52,7 +53,7 @@ class PostController extends Controller
     ]);
    }
 
-   public function store() {
+   public function store(Request $request) {
 
        $cats = Cat::all();
        $post = new Post();
@@ -62,7 +63,7 @@ class PostController extends Controller
        $post->post_img = request('post_img');
        $post->user_id = request('user_id');
        $post->cat_id = request('cat_id');
-
+       $post->slug = Str::slug(request('title')); 
        $post->save();
        
 

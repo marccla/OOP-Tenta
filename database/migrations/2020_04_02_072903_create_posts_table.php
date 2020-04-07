@@ -30,6 +30,7 @@ class CreatePostsTable extends Migration
             $table->string('post_img');     
             $table->integer('upvotes')->default(0);
             $table->integer('downvotes')->default(0);
+            $table->string('slug');
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -41,8 +42,7 @@ class CreatePostsTable extends Migration
                 ->references('id')
                 ->on('cats')
                 ->onDelete('cascade');
-            // $table->foreignId('tag_id')->references('id')->on('tags')->default(0);
-            // $table->unsignedBigInteger('cat_id')->references('id')->on('cats')->default(0);
+            
         });
     }
 
