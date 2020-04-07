@@ -5,7 +5,7 @@
     <div class="row">
 @foreach($posts as $post)
 
-        <div class="div col-11 col-md-4 col-lg-3 card m-sm-auto ">
+        <div class="div col-12 col-md-8 col-lg-7 card m-auto ">
             <span><small class="thread-text">
                 THREAD // {{ $post->cat->cat_item }}
             </small></span>
@@ -22,6 +22,21 @@
                  <small>{{ $post->created_at }}</small>
              </div>
             </a>
+            @if (Auth::user()->is_admin === 1)
+            <div>
+             <h4>Admin Panel</h4>
+            <form action="/posts/{{ $post->id }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn" value="DELETE" title="Delete">Delete</button>
+            </form> 
+                        
+              <a class="btn" href="/posts/edit/{{ $post->id }}">Edit</a>
+               
+               <a class="btn" href="/posts/{{ $post->id }}">Show</a>
+              
+            </div>   
+             @endif    
         </div>
     
 @endforeach

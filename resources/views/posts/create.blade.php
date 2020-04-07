@@ -51,7 +51,7 @@
     </div>
 
     <div class="col-12 col-md-6 col-lg-6 p-5">
-      <h2 class="text-center mb-3">Posts</h2>
+      <h2 class="text-center mb-3">Your posts</h2>
 
       @foreach($posts->reverse() as $post)
       @if (Auth::user()->id === $post->user_id)

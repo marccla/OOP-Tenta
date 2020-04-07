@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@if (Auth::user()->name === $post->author->name)
+@if (Auth::user()->name === $post->author->name ||Auth::user()->is_admin === 1)
 <div class="div container">
   <div class="row">
     <div class="col-12 col-md-6 col-lg-6 p-5">
