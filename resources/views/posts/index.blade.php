@@ -5,7 +5,7 @@
     <div class="row">
 @foreach($posts as $post)
 
-        <div class="div col-12 col-md-8 col-lg-7 card m-auto ">
+        <div class="div col-12 col-md-8 col-lg-7 card m-auto mb-1">
             <span><small class="thread-text">
                 THREAD // {{ $post->cat->cat_item }}
             </small></span>
@@ -23,7 +23,7 @@
              </div>
             </a>
             @if (Auth::user()->is_admin === 1)
-            <div>
+            <div class="admin-panel d-flex card-footer">
              <h4>Admin Panel</h4>
             <form action="/posts/{{ $post->id }}" method="POST">
               @csrf
