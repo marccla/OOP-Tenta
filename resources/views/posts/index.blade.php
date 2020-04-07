@@ -22,7 +22,8 @@
                  <small>{{ $post->created_at }}</small>
              </div>
             </a>
-            @if (Auth::user()->is_admin === 1)
+            
+            @if (Auth::user()->is_admin ?? '' === 1)
             <div class="admin-panel d-flex card-footer">
              <h4>Admin Panel</h4>
             <form action="/posts/{{ $post->id }}" method="POST">
@@ -35,8 +36,9 @@
                
                <a class="btn" href="/posts/{{ $post->id }}">Show</a>
               
-            </div>   
+            </div>
              @endif    
+             
         </div>
     
 @endforeach
