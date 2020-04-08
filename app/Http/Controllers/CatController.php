@@ -7,6 +7,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
+use Illuminate\Support\Str;
 
 class CatController extends Controller
 {
@@ -43,8 +44,8 @@ class CatController extends Controller
     {
         //
         $cat = new Cat();
-
         $cat->cat_item = request('cat_item');
+        $cat->slug = Str::slug(request('cat_item'));
 
         $cat->save();
 
@@ -57,12 +58,15 @@ class CatController extends Controller
      * @param  \App\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function show(Cat $cat, $id)
+    public function show(Cat $cat, $slug)
     {
         //
-        $cats = Cat::findOrFail($id)->posts;
+        $posts = Post::all();
+        $cats = Cat::where('slug', $slug)->firstOrFail();
+        // $cats = Cat::findOrFail($id)->posts;
         return view('cats.show', [
             'cats' => $cats,
+            'posts' => $posts,
             ]);
     }
 

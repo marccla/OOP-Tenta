@@ -15,7 +15,7 @@
                   <div class="col-12 col-lg-12 col-md-12">
                   @foreach ($cats as $cat)
                       
-                      <a href="/cats/{{ $cat->id }}"><span>{{ $cat->cat_item }}</span></a>
+                      <a href="/cats/{{ $cat->slug }}"><span>{{ $cat->cat_item }}</span></a>
                       
                   @endforeach
                 </div>

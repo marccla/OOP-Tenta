@@ -45,7 +45,8 @@ Route::post('/posts/{slug}/', 'CommentController@store');
 // Save them Cats
 Route::post('/posts/add/cat', 'CatController@store');
 // Route::get('/', 'CatController@index');
-Route::get('/cats/{id}', 'CatController@show');
+Route::get('/cats/{slug}', 'CatController@show');
+
 
 
 

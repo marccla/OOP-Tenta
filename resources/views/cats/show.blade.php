@@ -4,13 +4,13 @@
     
 @section('content')
 
-@foreach ($cats as $cat)
+@foreach ($posts as $post)
+@if( $cats->id === $post->cat_id )
 
 
+<p><a href="/posts/{{ $post->slug }}">{{ $post->title }}</a></p>
 
-<p><a href="/posts/{{ $cat->slug }}">{{ $cat->title }}</a></p>
-
-
+@endif
 @endforeach
 
 @endsection
