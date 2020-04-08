@@ -53,8 +53,7 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cats');
-        Schema::dropIfExists('tags');
+
         Schema::dropIfExists('posts');
     }
 }

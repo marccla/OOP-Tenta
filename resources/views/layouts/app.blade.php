@@ -80,6 +80,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        
     </div>
+    
+@include('assets.footer')
 </body>
 </html>

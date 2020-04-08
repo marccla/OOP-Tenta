@@ -13,3 +13,21 @@
     border: 3px solid black;
     box-shadow: 5px 5px 5px black;
 }
+
+.single-post {
+
+    p {
+        color: rgb(197, 197, 197);
+    }
+
+}
+span {
+    color: rgb(197, 197, 197) !important;
+}
+
+.post-body {
+
+    p {
+        max-width: 500px;
+    }
+}

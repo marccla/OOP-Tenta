@@ -23,11 +23,32 @@ body {
   box-shadow: 5px 5px 5px black;
 }
 
+.single-post p {
+  color: #c5c5c5;
+}
+
+span {
+  color: #c5c5c5 !important;
+}
+
+.post-body p {
+  max-width: 500px;
+}
+
 body {
   background-color: #2f2f2f;
 }
 
 h1 {
-  color: #e6e6e6;
+  color: #353535;
+}
+
+h2 {
+  color: #b3b3b3;
+  display: block;
+}
+
+h3 {
+  color: #b3b3b3;
 }
 

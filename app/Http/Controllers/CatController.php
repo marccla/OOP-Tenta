@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cat;
+use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
@@ -16,10 +17,10 @@ class CatController extends Controller
      */
     public function index()
     {
-        // $cats = Cat::all();
-        // return view('posts.create', [
-        //     'cats' => $cats,
-        // ]);
+        $cats = Cat::all();
+        return view('welcome', [
+            'cats' => $cats,
+        ]);
     }
 
     /**
@@ -56,9 +57,13 @@ class CatController extends Controller
      * @param  \App\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function show(Cat $cat)
+    public function show(Cat $cat, $id)
     {
         //
+        $cats = Cat::findOrFail($id)->posts;
+        return view('cats.show', [
+            'cats' => $cats,
+            ]);
     }
 
     /**

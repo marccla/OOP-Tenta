@@ -5,20 +5,22 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-lg-12 m-auto single-post">
+            <div class="post-body">
             <img src="/img/{{ $post->post_img }}"/>
-            <h1>Titel: {{ $post->title }}</h1>
-            <p>Innehåll: {{ $post->content }}</p>
-            <p>Kategori: {{ $post->cat->cat_item }}
-            <p>Skapad: {{ $post->created_at}}</p>
-            <p>updaterad: {{ $post->updated_at}}</p>
-            <p>Skrivet av: {{ $post->author->name }}</p>
+                <h1>Titel: {{ $post->title }}</h1>
+                <p>Innehåll: {{ $post->content }}</p>
+                <p>Kategori: {{ $post->cat->cat_item }}
+                <p>Skapad: {{ $post->created_at}}</p>
+                <p>updaterad: {{ $post->updated_at}}</p>
+                <p>Skrivet av: {{ $post->author->name }}</p>
             <a href="/posts">Back</a>
+            </div>
         </div>
         @if ($user = Auth::check())
             
         
-        <div class="col-12 col-lg-6 m-auto">
+        <div class="col-12 col-lg-6 m-auto single-post">
                         <h2>Add a comment</h2>
                         <form action="/posts/{{ $post->id ?? '' }}" method="POST">
                             @csrf
@@ -32,11 +34,11 @@
                             </form>
         </div>
         @else 
-        <div class="col-12 col-md-6 col-lg-6 m-auto">
+        <div class="col-12 col-md-6 col-lg-3 m-auto">
             <span> <a href="/login"> Login</a> to make a comment</span>
         </div>
         @endif
-        <div class="col-12 col-md-6 col-lg-6 m-auto">
+        <div class="col-12 col-md-6 col-lg-3 m-auto">
          
              <h3>Comments</h3>
         
