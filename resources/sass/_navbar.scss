@@ -1,12 +1,14 @@
 $aColor: rgb(199, 199, 235);
 
+
+
+
 .navbar {
-    background: black !important;
+    background: transparent !important;
     a {
         color: $aColor !important;
     }
 }
 
-body {
-    background-color: red;
-}
+
+

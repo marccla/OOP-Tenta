@@ -1,13 +1,9 @@
 .navbar {
-  background: black !important;
+  background: transparent !important;
 }
 
 .navbar a {
   color: #c7c7eb !important;
-}
-
-body {
-  background-color: red;
 }
 
 .thread-text {
@@ -36,7 +32,7 @@ span {
 }
 
 body {
-  background-color: #2f2f2f;
+  background-image: url(/img/background.jpeg);
 }
 
 h1 {
