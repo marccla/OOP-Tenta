@@ -10,14 +10,16 @@
             </div>
           </div>
           <div class="container">
-              <div class="row">
+              <div class="row text-center">
                   <h2>Choose a subject</h2>
                   <div class="col-12 col-lg-12 col-md-12">
+                    <nav class="navbar">
                   @foreach ($cats as $cat)
                       
                       <a href="/cats/{{ $cat->slug }}"><span>{{ $cat->cat_item }}</span></a>
                       
                   @endforeach
+                </nav>
                 </div>
               </div>
           </div>
