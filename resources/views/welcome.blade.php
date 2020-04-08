@@ -14,11 +14,13 @@
                   <h2>Choose a subject</h2>
                   <div class="col-12 col-lg-12 col-md-12">
                     <nav class="navbar">
+                      <a href="/posts/"><span>All posts in all categories</span></a>
                   @foreach ($cats as $cat)
                       
                       <a href="/cats/{{ $cat->slug }}"><span>{{ $cat->cat_item }}</span></a>
                       
                   @endforeach
+                  
                 </nav>
                 </div>
               </div>

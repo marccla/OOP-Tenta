@@ -5,9 +5,9 @@
     <div class="row">
 @foreach($posts as $post)
 
-        <div class="div col-12 col-md-8 col-lg-7 card m-auto mb-1">
+        <div class="div col-12 col-md-8 col-lg-7 card ml-auto mr-auto mb-2">
             <span><small class="thread-text">
-                THREAD // {{ $post->cat->cat_item }}
+                THREAD // <a href="/cats/{{ $post->cat->slug }}">{{ $post->cat->cat_item }}</a>
             </small></span>
             <a href="/posts/{{ $post->slug }}">
             <img src="{{ $post->img_url }}" style="max-width:150px">

@@ -21,7 +21,7 @@
                     you are logged in!
                     <ul>
                         <li>
-                            <a href="/posts/add">Add a new Post</a>
+                            <a href="/posts/add">Add/Edit Post</a>
                         </li>                        <li>
                             <a href="/posts/">View the latest posts</a>
                         </li>
