@@ -3,6 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="ml-auto mr-auto mb-5 text-center col-12">
+            <h2>Latest Posts</h2>
+        </div>
+        
 @foreach($posts as $post)
 
         <div class="div col-12 col-md-8 col-lg-7 card ml-auto mr-auto mb-2">
@@ -42,7 +46,11 @@
         </div>
     
 @endforeach
+    </div><!-- row ends -->
+    <div class="col-6 mr-auto ml-auto mt-3">
+        {{ $posts->links() }}
     </div>
-    {{ $posts->links() }}
-</div>
+</div> <!-- container ends -->
+
+
 @endsection

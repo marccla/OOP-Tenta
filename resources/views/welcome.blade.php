@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section>
+
     <main>
         <div class="jumbotron jumbotron-fluid mt-5">
             <div class="container">
@@ -10,22 +10,25 @@
             </div>
           </div>
           <div class="container">
-              <div class="row text-center">
-                  <h2>Choose a subject</h2>
-                  <div class="col-12 col-lg-12 col-md-12">
-                    <nav class="navbar">
-                      <a href="/posts/"><span>All posts in all categories</span></a>
-                  @foreach ($cats as $cat)
-                      
-                      <a href="/cats/{{ $cat->slug }}"><span>{{ $cat->cat_item }}</span></a>
-                      
-                  @endforeach
+              <div class="row">
                   
-                </nav>
-                </div>
-              </div>
-          </div>
-
+                  <div class="col-12 col-lg-12 col-md-12">
+                    <h2>Choose a subject</h2>
+                    <nav class="navbar">
+                      <ul class="">
+                       <li class="mr-5">
+                         <a href="/posts/">All posts in all categories</a>
+                       </li>
+                       @foreach ($cats as $cat)
+                       <li class="mr-5">
+                         <a href="/cats/{{ $cat->slug }}">{{ $cat->cat_item }}</a>  
+                       </li>
+                        @endforeach
+                      </ul>
+                    </nav>
+                  </div>
+              </div> <!-- row ends -->
+           </div> <!-- container ends -->
     </main>
-</section>
+
 @endsection

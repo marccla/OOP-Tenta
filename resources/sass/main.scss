@@ -2,6 +2,7 @@
 
 @use"navbar";
 @use"posts";
+@use"footer";
 
 $bgColor: rgb(47, 47, 47);
 $black: rgb(53, 53, 53);
@@ -12,14 +13,29 @@ body {
 }
 
 h1 {
-    color: $black;
+    color: whitesmoke;
 }
 
 h2  {
-    color: $white;
-    display: block;
+    color: $black;
+    
 }
 
 h3 {
     color: $white;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: black;
+}
+
+.jumbotron {
+    background-image: url('img/background.jpeg');
+    p {
+        color: whitesmoke;
+    }
 }

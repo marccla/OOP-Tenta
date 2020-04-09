@@ -1,8 +1,8 @@
 
-<footer class="foooter bg-light">
+<footer class="foooter">
     <div class="container">
         <div class="row">
-            <h2>This is de footör </h2>
+            <p class="mr-auto ml-auto mt-4"><small>&copy; marc larsson</small></p>
         </div>
     </div>
 </footer>

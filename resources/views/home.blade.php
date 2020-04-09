@@ -19,10 +19,11 @@
                     @endif
                     Welcome {{ Auth::user()->name }}, 
                     you are logged in!
-                    <ul>
-                        <li>
+                    <ul class="d-flex mt-5">
+                        <li class="mr-3">
                             <a href="/posts/add">Add/Edit Post</a>
-                        </li>                        <li>
+                        </li>                       
+                         <li>
                             <a href="/posts/">View the latest posts</a>
                         </li>
                     </ul>
