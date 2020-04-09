@@ -62,8 +62,8 @@ class CatController extends Controller
     {
         //
         $posts = Post::all();
+        $posts = Post::orderBy('updated_at', 'desc')->paginate(15);
         $cats = Cat::where('slug', $slug)->firstOrFail();
-        // $cats = Cat::findOrFail($id)->posts;
         return view('cats.show', [
             'cats' => $cats,
             'posts' => $posts,

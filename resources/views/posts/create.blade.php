@@ -65,7 +65,7 @@
                     
           <a class="btn" href="/posts/edit/{{ $post->id }}">Edit</a>
            
-           <a class="btn" href="/posts/{{ $post->id }}">Show</a>
+           <a class="btn" href="/posts/{{ $post->slug }}">Show</a>
           
         </div>   
          @endif    

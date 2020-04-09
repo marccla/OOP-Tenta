@@ -5,7 +5,7 @@
     <main>
         <div class="jumbotron jumbotron-fluid mt-5">
             <div class="container">
-              <h1 class="">Welcome to Derppit</h1>
+              <h1 class="">Welcome to The Wall</h1>
               <p class="lead">Here we discuss everything and nothing.</p>
             </div>
           </div>

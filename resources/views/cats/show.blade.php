@@ -27,7 +27,7 @@
                 <small>{{ $post->created_at }}</small>
             </div>
             </a>
-            
+
             @if (Auth::user()->is_admin ?? '' === 1)
             <div class="admin-panel d-flex card-footer">
              <h4>Admin Panel</h4>
